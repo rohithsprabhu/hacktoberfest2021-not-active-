@@ -1,4 +1,4 @@
-# C snippets can be addedd here
+# C ,C++ , Python snippets can be addedd here
 
 
 ## 🤲 Contributing
