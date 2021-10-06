@@ -24,16 +24,16 @@ int main()
 {
     int size;
     int *ptr;
-    cout << "Enter number of values you want to store (size of array):" << endl;
+    cout << "Enter the size of your array :" << endl;
     cin >> size;
     ptr = new int[size];
-    cout << "Enter values to be stored in the array" << endl;
+    cout << "*****> Enter values to be stored in the array <*****" << endl;
     for (int i = 0; i < size; i++)
     {
         cin >> ptr[i];
     }
 
-    cout << "Please enter an element to search" << endl;
+    cout << "*****> Please enter an element to search <*****" << endl;
     int num;
     cin >> num;
 
