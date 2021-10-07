@@ -12,4 +12,4 @@ def factorialOfNumber(n):
  
 print("Enter the number to find its Factorial")
 a=int(input())
-print("Factorial of",a,"is",factorial(a))
+print("Factorial of",a,"is",factorialOfNumber(a))
