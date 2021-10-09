@@ -20,7 +20,6 @@ void insertionSort(int *arr, int n){
      }
 }
 int main(){
-    // Step wise Step explanation
     // -1   0    1   2   3   4   5
    //      12,| 54, 65, 07, 23, 09 --> i=1, key=54, j=0
    //      12,| 54, 65, 07, 23, 09 --> 1st pass done (i=1)!
