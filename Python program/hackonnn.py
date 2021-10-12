@@ -1,11 +1,20 @@
 # Python program to find largest
 # number in a list
   
-# list of numbers
-list1 = [10, 20, 4, 45, 99]
+# creating an empty list
+lst = []
+ 
+# number of elements as input
+n = int(input("Enter number of elements : "))
+print("Enter elements of the list:")
+# iterating till the range
+for i in range(0, n):
+    ele = int(input())
+ 
+    lst.append(ele) # adding the element
   
 # sorting the list
-list1.sort()
+lst.sort()
   
 # printing the last element
-print("Largest element is:", list1[-1])
+print("Largest element is:", lst[-1])
