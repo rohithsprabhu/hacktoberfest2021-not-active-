@@ -1,4 +1,4 @@
-# C , C++ , Python & Java Snippets can be addedd here
+# C , C++ , Python & Java Snippets can be added here
 ADD YOUR CODE TO PARTICULAR PROGRAM FOLDER
 
 ## 🤲 Contributing
