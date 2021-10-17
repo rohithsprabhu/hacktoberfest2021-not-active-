@@ -16,3 +16,4 @@ class Palindrome{
          System.out.println(temp+" not palindrome a number");    
    }  
 }
+
