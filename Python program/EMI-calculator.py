@@ -1,0 +1,5 @@
+a = int(input("Enter Loan Amount : "))
+b = float(input("Enter Interest rate (p.m) : "))
+c = int(input("Enter time period (month) : "))
+d = a*b*((1+b)**c)/(((1+b)**c)-1)
+print("EMI is" ,d )
