@@ -1,48 +1,71 @@
-#include <iostream>
-
+#include<iostream>
 using namespace std;
-
-
-int partition1(int a[],int l,int r)
+void disp(int *arr, int n)
 {
-    int j,pivot;
-    pivot=a[r];
-    int i=l-1;
-    for(j=l;j<r;j++)
+    for(int i=0 ; i<n ; i++)
     {
-        if(a[j]<pivot)
+        cout<<arr[i]<<" ";
+    }
+}
+
+int partition(int A[], int low, int high)
+{
+    int pivot = A[low];
+    int i = low + 1;
+    int j = high;
+    int temp;
+
+    do
+    {
+        while (A[i] <= pivot)
         {
             i++;
-            swap(a[j],a[i]);
         }
-    }
-    swap(a[i+1],a[r]);
-    return i+1;
+
+        while (A[j] > pivot)
+        {
+            j--;
+        }
+
+        if (i < j)
+        {
+            temp = A[i];
+            A[i] = A[j];
+            A[j] = temp;
+        }
+    } while (i < j);
+
+    // Swap A[low] and A[j]
+    temp = A[low];
+    A[low] = A[j];
+    A[j] = temp;
+    return j;
 }
 
-void quicksort(int a[],int l,int r)
+void quickSort(int A[], int low, int high)
 {
-    if(l<r)
+    int partitionIndex; // Index of pivot after partition
+
+    if (low < high)
     {
-        int pi=partition1(a,l,r);
-        quicksort(a,l,pi-1);
-        quicksort(a,pi+1,r);
+        partitionIndex = partition(A, low, high);
+        quickSort(A, low, partitionIndex - 1);  // sort left subarray
+        quickSort(A, partitionIndex + 1, high); // sort right subarray
     }
 }
-void printArray(int arr[], int size)
-{
-    int i;
-    for (i = 0; i < size; i++)
-        cout << arr[i] << " ";
-    cout << endl;
-}
 
-int main()
-{
-   int arr[] = {10, 7, 8, 9, 1, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    quicksort(arr, 0, n - 1);
-    cout << "Sorted array: \n";
-    printArray(arr, n);
+int main(){
+
+    int n;
+    cout<<"Enter the size of an Array : ";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter the Elements of an Array : ";
+    for(int i = 0 ; i<n ; i++){
+        cin>>arr[i];
+    }
+    quickSort(arr,0,n-1);
+    cout<<"Quick sort running..."<<endl;
+    disp(arr,n);
     return 0;
 }
