@@ -1,4 +1,4 @@
-# C , C++ , Python & Java Snippets can be added here
+# Dont Contribute to this Repo .This Repo is excluded from HACKTOBER 
 ADD YOUR CODE TO PARTICULAR PROGRAM FOLDER
 
 ## 🤲 Contributing
