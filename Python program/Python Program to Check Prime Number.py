@@ -11,8 +11,9 @@ num = 407
 if num > 1:
 
    # check for factors
-
-   for i in range(2,num):
+   # As the number cannot be divisible by more than its half, we can divide the range so that the python program can be executed faster
+   half_of_no = int(num/2)
+   for i in range(2,half_of_no):
 
        if (num % i) == 0:
 
