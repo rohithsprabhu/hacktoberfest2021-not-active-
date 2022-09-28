@@ -1,0 +1,80 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    stack<int> s;
+    queue<int> q1;
+    queue<int> q2;
+    int n1,n2,n3=0;
+
+    
+    cin>>n2;
+    int l=0;
+    int y=n1;
+    int x1=n1,x2=n2;
+    while(x1>0)
+    {
+        int d=x1%10;
+        s.push(d);
+        x1=x1/10;
+    }
+    while(x2>0)
+    {
+        int d=x2%10;
+        q1.push(d);
+        x2=x2/10;
+    }
+    while(y>0)
+    {
+        l++;
+        y=y/10;
+    }
+    l=l/2;
+    int i=1;
+    
+    while(i<=l)
+    {
+        int d=s.top();
+        s.pop();
+        n3=(n3*10)+d;
+        i++;
+    }
+    i=1;
+    
+    while(i<=l)
+    { 
+        int d=q1.front();
+        q1.pop();
+        s.push(d);
+        i++;
+    }
+   
+    while(n3>0)
+    {
+        int d=n3%10;
+        q2.push(d);
+        n3=n3/10;
+    }
+    while(!q1.empty())
+    {
+        int d=q1.front();
+        q1.pop();
+        q2.push(d);
+    }
+    cout<<endl<<"Number 1:";
+    while(!s.empty())
+    {
+        cout<<s.top();
+        s.pop();
+    }
+    cout<<endl<<"Number 2:";
+
+    while(!q2.empty())
+    {
+        cout<<q2.front();
+        q2.pop();
+    }
+
+    
+    return 0;
+}
