@@ -1,85 +1,43 @@
-
-#Stone,Paper,Scissor game
-
-import random 
-lst = ['t','p','s']
-
-
-hp=0
-cp=0
-chances= 0
-left=10
-
-print("Welcome to the stone paper scissor game")
-name = input("enter your name: ")
-
-print("Enter t for stone\n enter p for paper\n and enter s scissor")
-
-
-while chances<left:
-    inp=input("enter your choice: ")
-    ran = random.choice(lst)
-
-
-    if inp == ran:
-        print("You both got tied")
-
-    elif inp=="t" and ran=="s":
-        hp = hp+1
-        print(name + " choose stone and the computer choose scissor")
-        print("You won!!")
-    
-
-    elif inp=="t" and ran=="p":
-        cp = cp+1
-        print(name + " choose stone and the computer choose paper")
-        print("You loose")
-
-
-    elif inp=="p" and ran=="t":
-        hp = hp+1
-        print(name + " choose paper and the computer choose stone")
-        print("You won!!")
-
-    elif inp=="p" and ran=="s":
-        cp = cp+1
-        print(name + " choose paper and the computer choose scissor")
-        print("You lose")
-
-    elif inp=="s" and ran=="p":
-        hp = hp+1
-        print(name + " choose scissor and the computer choose paper")
-        print("you won!!")
-
-    elif inp=="s" and ran=="t":
-        cp = cp+1
-        print(name + " choose scissor and the computer choose stone")
-        print("You lose")
-
+import random
+game_list=['Rock', 'rock', 'Paper', 'paper', 'Scissors', 'scissors']
+computer=c=0
+command=p=0
+print("Score: Computer " +str(c)+ " Player " +str(p))
+# the loop
+run=True
+while run:
+    computer_choice=random.choice(game_list)
+    command=input('Rock, Paper, Scissors or Quit: ')
+    if command.lower() == computer_choice.lower():
+        print("Tie")
+    elif command == 'rock':
+        if computer_choice == 'scissors':
+            print("Player won!")
+            p+=1
+        else:
+            print("Computer won!")
+            c+=1
+    elif command == 'scissors':
+        if computer_choice == 'paper':
+            print("Player won!")
+            p+=1
+        else:
+            print("Computer won!")
+            c+=1
+    elif command == 'paper':
+        if computer_choice == 'rock':
+            print("Player won!")
+            p+=1
+        else:
+            print("Computer won!")
+            c+=1
+    elif command == 'quit':
+        print("Thank you for playing!!")
+        break
     else:
-        print("wrong input")
-
-    
-    chances = chances+1
-
-
-
-print("Game over!")
-
-
-
-print(f" {name} points {hp} ")
-
-print(f"Computer points {cp}")
-
-if hp==cp:
-    print("You both got tied")
-
-
-elif hp>cp:
-    print(name + " wins!")
-
-
-elif cp>hp:
-    print("Computer wins!!")
-
+        print("Wrong command!")
+    print("Player: " + command.capitalize())
+    print("Computer: " + computer_choice.capitalize())
+    print("")
+    print("Score: Computer " + str(c) + " Player " + str(p))
+    print("")
