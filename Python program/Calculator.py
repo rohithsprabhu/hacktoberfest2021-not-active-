@@ -63,7 +63,9 @@ if __name__ == '__main__':
 
 #Code To Be Paste
 
-icon = PhotoImage(file="YourImageName.YourImageType") #Png , Jpg , Other.
+icon = PhotoImage(file="YourImageName.YourImageType") 
+#Png,Jpg ,Other.
 
-root.tk.call('wm','iconphoto',root._w,icon) #Image Should Be With The Python File.
+root.tk.call('wm','iconphoto',root._w,icon)
+#Image Should Be With The Python File.
 
