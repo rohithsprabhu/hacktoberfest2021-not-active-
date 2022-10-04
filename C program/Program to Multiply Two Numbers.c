@@ -8,9 +8,6 @@ int main() {
 
     scanf("%lf %lf", &a, &b);  
 
- 
-
-    // Calculating product
 
     product = a * b;
 
